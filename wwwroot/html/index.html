@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/indexstyle.css?v=@DateTime.Now.Millisecond">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Оголошення</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <div>
+            <li class="create"><a href="/create">+<i class="fa-regular fa-file-lines" title="Створити оголошення"></i><span> Cтворити</span></a></li>
+            </div>
+            <div>
+            <li class="login" id="login-li"><a href="/login" id="login" title="Увійти"><span>Вхід </span><i class="fa-solid fa-right-to-bracket"></i></a></li>
+            <li><a href="/registration" id="registration" title="Зареєструватись"><span>Реєстрація </span><i class="fa-regular fa-address-card"></i></a></li>
+            <li><a href="/profile" id="profile" title="Профіль"><span>Профіль </span><i class="fa-regular fa-user"></i></a></li>
+            </div>
+        </ul>
+        <h1>Оголошення</h1>
+    </header>
+
+    <div class="filter-container">
+        <h2>Фільтри</h2>
+        <h3>Сортувати</h3>
+        <div class="sort">
+            <button id="byDate" class="active">За датою</button>
+            <button id="byName">За назвою</button>
+            <button id="byViews">За популярністю</button>
+        </div>
+        <h3>Тег</h3>
+        <div class="sort-by-tag">
+            <label class="">
+                <input type="radio" name="tag" value="Всі" checked="checked">
+                <span class="checkmark"></span>
+                Всі
+            </label>
+        </div>
+        <div class="button-group">
+            <button id="saveButton">Зберегти</button>
+            <button id="resetButton">Скинути</button>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Пошук..." />
+        <i class="fa-solid fa-magnifying-glass" id="searchButton" title="Пошук"></i>
+        <i class="fa-solid fa-filter" id="filters" title="Фільтри"></i>
+    </div>
+
+    <main id="main">
+
+        <!-- <div class="container">
+            <img src="https://img.tsn.ua/cached/535/tsn-84ee4f9844c21d3af2b3cfbad2c9c711/thumbs/428x268/52/8f/116aa7fda49cd2f9390db55770768f52.jpeg" alt="">
+            <div class="name">1Різке похолодання</div>
+            <div class="short-description">У неділю, 8 жовтня, в західних областях місцями передбачаються​​​​​​​ заморозки -3 градуси. Ближче до вихідних, 7-8 жовтня, прийде відчутне похолодання. Очікується поривчастий вітер, місцями з невеликими дощами.</div>
+            <div class="meta">
+                <i class="fa-solid fa-calendar-days"></i>
+                <div class="date">05.10.23</div>
+                <i class="fa-solid fa-tag"></i>
+                <div class="teg">Погода</div>
+                <i class="fa-solid fa-eye"></i>
+                <div class="views">20</div>
+            </div>
+        </div> -->
+    </main>
+
+    <div class="pager">
+        <div class="null-message">
+            Оголошення відсутні
+        </div>
+        <i class="fa-solid fa-chevron-left"></i>
+        <ul class="pages">
+        </ul>
+        <i class="fa-solid fa-chevron-right"></i>
+    </div>
+
+    <div id="go-top-button">
+        <i class="fa-solid fa-angle-up"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+</html>

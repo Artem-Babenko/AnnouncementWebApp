@@ -1,0 +1,428 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #d6e3dc;
+}
+
+header {
+    background-color: white;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    text-align: center;
+    padding: 12px;
+    color: black;
+}
+
+header ul {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 20px 15px;
+}
+
+header ul div{
+    display: flex;
+}
+
+header ul div:last-of-type{
+    right: 0;
+}
+
+header ul li.login{
+    border-right: 3px solid #d6e3dc;
+}
+
+header ul li a {
+    padding: 0px 10px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #ed5d2c;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+header ul li a:hover {
+    cursor: pointer;
+    color: #05564b;
+}
+
+@media screen and (max-width: 750px){
+    header h1{
+        padding: 5px;
+    }
+    header ul{
+        padding: 12px 3px;
+    }
+    header ul li a{
+        padding: 0px 7px;
+    }
+    header ul li a span {
+        display: none;
+    }
+    header ul li a i{
+        font-size: 23px;
+    }
+
+    header ul li.login {
+        border-right: 2px solid #d6e3dc;
+    }
+    #profile{
+        padding-right: 15px;
+    }
+    #create{
+        padding-left: 15px;
+    }
+}
+
+
+
+.search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    margin: auto 20px;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.search-container input{
+    width: 100%;
+    max-width: 700px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 999px;
+    box-shadow: 1px 3px 9px rgba(0,0,0,0.1);
+    font-size: 15px;
+}
+
+.search-container i{
+    background-color: white;
+    padding: 11px;
+    font-size: 16px;
+    border-radius: 999px;
+    box-shadow: 1px 3px 9px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.search-container i:hover{
+    background-color: #ed5d2c;
+    color: white;
+}
+
+.filter-container {
+    display: block;
+    transform: scale(0);
+    position: absolute;
+    top: initial;
+    right: 0;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: 1px 3px 9px rgba(0,0,0,0.2);
+    overflow: hidden;
+    margin: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.filter-container h2{
+    text-align: center;
+}
+
+.filter-container h3{
+    margin: 10px;
+}
+
+.filter-container .sort {
+    display: flex;
+    box-shadow: 1px 3px 9px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.filter-container .sort button{
+    padding: 5px 10px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 600px) {
+    .filter-container {
+        width: calc(100% - 20px);
+    }
+    .filter-container .sort button{
+        width: 100%;
+    }
+}
+
+.filter-container .sort button.active{
+    background-color: #ed5d2c;
+    color: white;
+}
+
+.filter-container .sort-by-tag{
+    padding: 0 5px;
+}
+
+.filter-container label{
+    font-size: 15px;
+    font-weight: 500;
+    display: block;
+    position: relative;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+/* Спеціальний стиль для радіокнопок */
+label input[type="radio"] {
+    display: none; /* Приховуємо саму радіокнопку */
+}
+
+label span.checkmark {
+    position: relative;
+    padding-left: 20px; /* Відступ ліворуч від тексту радіокнопки */
+}
+
+/* Стиль для галочки */
+label span.checkmark::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-55%);
+    width: 10px;
+    height: 10px;
+    border: 2px solid #ed5d2c; /* Колір рамки галочки */
+    border-radius: 50%; /* Округлість галочки */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Змінюємо стиль галочки при активному виборі */
+label input[type="radio"]:checked + span.checkmark::before {
+    background-color: #ed5d2c; /* Колір галочки, коли вибрана */
+    border-color: #ed5d2c; /* Колір рамки галочки, коли вибрана */
+}
+
+.button-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    gap: 15px;
+}
+
+.button-group button{
+    background-color: white;
+    border: none;
+    box-shadow: 1px 3px 9px rgba(0,0,0,0.15);
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-group button:hover{
+    background-color: #ed5d2c;
+    color: white;
+}
+
+main{
+    margin: auto 10px;
+    padding: 15px 0;
+    columns: 1;
+    column-gap: 0;
+    transition: all 0.3s ease;
+}
+
+.container{
+    margin: 0px 10px;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 1px 3px 9px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    letter-spacing: 0.3px;
+    word-spacing: 1px;
+    line-height: 20px;
+    transition: all 0.3s ease;
+}
+
+.container:hover{
+    box-shadow: 1px 3px 9px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+@media screen and (min-width: 700px) {
+    main{
+        margin: auto 10px;
+        columns: 1;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    main{
+        margin: auto 25px;
+        columns: 2;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main{
+        margin: auto 75px;
+        columns: 3;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    main{
+        margin: auto 150px;
+    }
+}
+@media screen and (min-width: 1600px) {
+    .main{
+        margin: auto 350px;
+    }
+}
+
+.container img{
+    width: 100%;
+}
+
+.container .name{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 15px;
+    text-align: center;
+    width: 85%;
+}
+
+.container .short-description{
+    padding: 0 10px 10px;
+}
+
+.container .meta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 10px;
+    color: #05564b8f;
+    font-size: 14px;
+}
+
+.container .meta div{
+    padding-right: 30px;
+    font-weight: 600;
+}
+
+.container .meta i{
+    padding: 0 5px;
+}
+
+#go-top-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: #ed5d2c;
+    padding: 10px 13.25px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: white;
+    margin: 15px;
+    cursor: pointer;
+    opacity: 0; /* Початкова прозорість кнопки 0 */
+    transition: all 0.5s ease;
+}
+
+.pager{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 80px;
+}
+
+.pager .pages{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: 500;
+    gap: 5px;
+    box-shadow: 1px 3px 9px rgba(0, 0, 0, 0.1);
+}
+
+.pages li {
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.pages li.active {
+    background-color: #ed5d2c;
+    color: white;
+}
+
+.pager i {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 1px 3px 9px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.pager i:hover{
+    background-color: #ed5d2c;
+    color: white;
+}
+
+.null-message {
+    background-color: white;
+    border-radius: 999px;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 17px;
+    box-shadow: 1px 3px 9px rgba(0, 0, 0, 0.1);
+}

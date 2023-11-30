@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/loginstyle.css?v=@DateTime.Now.Millisecond">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Реєстрація</title>
+</head>
+<body>
+    <div class="back">
+        <a href="/"><i class='bx bx-chevron-left' title="На головну"></i>На головну</a>
+    </div>
+
+    <div class="container">
+        <h2>Реєстрація</h2>
+        <div class="form">
+            <p>
+                <label>Ім'я:</label><br />
+                <input type="text" id="name" oninput="this.style.border = 'none';"/>
+            </p>
+            <p>
+                <label>Прізвище:</label><br />
+                <input type="text" id="surname" oninput="this.style.border = 'none';"/>
+            </p>
+            <p>
+                <label>Електронна пошта:</label><br />
+                <input type="email" id="email" oninput="this.style.border = 'none';"/>
+            </p>
+            <p>
+                <label>Пароль:</label><br />
+                <input type="password" id="password1" oninput="this.style.border = 'none';"/>
+            </p>
+            <p>
+                <label>Підтвердіть пароль:</label><br />
+                <input type="password" id="password2" oninput="this.style.border = 'none';"/>
+            </p>
+            <div id="error">Невведена пошта та пароль</div>
+            <p>
+                Маєш акаунт?
+                <a href="/login">Входь!</a>
+            </p>
+            <button id="registrationButton">Зареєструватись</button>
+        </div>
+    </div>
+    <script src="/js/registration.js"></script>
+</body>
+</html>

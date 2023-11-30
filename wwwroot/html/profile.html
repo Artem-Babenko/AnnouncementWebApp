@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/profilestyle.css?v=@DateTime.Now.Millisecond">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Профіль</title>
+</head>
+<body>
+    <header>
+        <div class="back">
+            <a href="/"><i class='bx bx-chevron-left' title="На головну"></i><span>На головну</span></a>
+            <a href="/logout" class="logout" title="Вийти"><span>Вийти</span><i class='bx bx-log-in'></i></a>
+        </div>
+        <h1>Профіль</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="info-panel">
+                <h2>Дані користувача</h2>
+                <div class="info">
+
+                    <ul>
+                        <li id="userName">Ім'я:</li>
+                        <li id="userSurname">Прізвище:</li>
+                        <li id="userEmail">Пошта:</li>
+                        <li id="dateRegistration">Дата реєстрації:</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info-panel">
+                <h2>Статистика</h2>
+                <div class="info">
+                    <ul>
+                        <li id="user-views">Переглянуто оголошень:</li>
+                        <li id="all-announcements">Всього оголошень:</li>
+                        <li id="active-announcements">Активних оголошень:</li>
+                        <li id="all-views">Переглядів:</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="info-panel announcement">
+                <i class="fa-regular fa-circle-question help-button"></i>
+                <h2>Власні оголошення</h2>
+                <div class="help-container">
+                    <h3>Активне</h3>
+                    <p><span style="color: green;">Так</span> - оголошення буде активне точно сьогодні та завтра.</p>
+                    <p><span style="color: #d7bf04;">Сьогодні</span> - оголошення активне тільки сьогодні або до сьогодні(включно).</p>
+                    <p><span style="color: red;">Ні</span> - оголошення не активне. Не відображається у пошуку.</p>
+                </div>
+                <table>
+                    <thead>
+                        <tr>    
+                            <th>№</th>
+                            <th>Тема</th>
+                            <th>Початок</th>
+                            <th>Кінець</th>
+                            <th>Тег</th>
+                            <th>Активне</th>
+                            <th>Перегляди</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="/js/profile.js"></script>
+</body>
+</html>

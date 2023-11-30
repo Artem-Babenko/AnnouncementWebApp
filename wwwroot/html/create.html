@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/createstyle.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Створення оголошення</title>
+</head>
+<body>
+    <header>
+        <div class="back">
+            <a href="/"><i class='bx bx-chevron-left'title="На головну"></i><span>На головну</span></a>
+        </div>
+        <h1>Створення оголошення</h1>
+    </header>
+
+    <main>
+        <form method="post">
+            
+            <div class="container photo">
+                <p>Фото</p>
+
+                <label for="photo" class="drop-container" id="dropcontainer">
+                    <span class="drop-title">Перетягніть фото сюди</span>
+                    або
+                    <input type="button" value="Оберіть фото" class="photoButton" onclick="document.getElementById('photo').click()">
+                    <input type="file" id="photo" accept="image/*" onchange="upload()" required style="display:none;">
+                </label>
+
+                <img src="" id="photoImg" ondblclick="deleteTemporaryPhoto()">
+                <input type="text" name="photo" id="photoLink" hidden />
+                <div class="double-click" id="double-click">
+                    <div>
+                        Натисніть двічі на фото щоб видалити його
+                    </div>
+                    <i class="fa-regular fa-hand-pointer"></i>
+                </div>
+            </div>
+
+            <div class="container name">
+                <p>Тема оголошення</p>
+                <input name="name" maxlength="40" onkeyup="countChars(this, 40, 'max-length-name');" required>
+                <div class="max-length" id="max-length-name">0/40</div>
+            </div>
+
+            <div class="container short-descritpion">
+                <p>Короткий опис</p>
+                <textarea name="short-description" maxlength="300" onkeyup="countChars(this, 300, 'max-length-short'); required"></textarea>
+                <div class="max-length" id="max-length-short">0/300</div>
+            </div>
+
+            <div class="container full-descritpion">
+                <p>Повний опис</p>
+                <textarea name="full-descritpion" maxlength="1500" onkeyup="countChars(this, 1500, 'max-length-full');" required></textarea>
+                <div class="max-length" id="max-length-full">0/1500</div>
+            </div>
+
+            <div class="container contacts">
+                <p>Контакти</p>
+                <ul class="contacts">
+                    <li class="telegram">
+                        <i class="fa-brands fa-telegram"></i>
+                        <input name="telegram" />
+                    </li>
+                    <li class="email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" name="email" />
+                    </li>
+                    <li class="address">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <input name="address" />
+                    </li>
+                    <li class="phone">
+                        <i class="fa-solid fa-phone"></i>
+                        <input name="phone" />
+                    </li>
+                </ul>
+            </div>
+
+            <div class="meta">
+                <div class="container">
+                    <p>Строк</p>
+                    <label>Початок</label>
+                    <input type="date" name="startDate" id="startDate">
+                    <label>Кінець</label>
+                    <input type="date" name="endDate" id="endDate" required>
+                </div>
+                <div class="container">
+                    <p>Тег</p>
+                    <label>Вибір тегу</label>
+                    <select name="tag" class="tag-select" required>
+                        
+                    </select>
+                </div>
+                <div class="container owner">
+                    <p>Власник</p>
+                    <input type="text" name="owner" id="owner">
+                </div>
+            </div>
+
+            <button type="submit" id="sendButton">Створити</button>
+        </form>
+    </main>
+
+    <script src="/js/create.js"></script>   
+
+</body>
+</html>
