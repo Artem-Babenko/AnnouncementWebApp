@@ -1,1 +1,1 @@
-# AnnouncementWebApp
+Опис проекта Оголошення.
