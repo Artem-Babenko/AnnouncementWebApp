@@ -54,7 +54,7 @@ public class UpdatePageMiddleware
             announcement.PhotoLink = form["photo"];
             announcement.Name = form["name"];
             announcement.ShortDescription = form["short-description"];
-            announcement.FullDescription = form["full-descritpion"];
+            announcement.FullDescription = form["full-description"];
             announcement.Telegram = form["telegram"];
             announcement.Email = form["email"];
             announcement.Address = form["address"];
@@ -64,6 +64,13 @@ public class UpdatePageMiddleware
             announcement.EndDate = DateTime.ParseExact(form["endDate"], "yyyy-MM-dd", null);
             announcement.StartDateString = announcement.StartDate.ToString("dd.MM.yy");
             announcement.EndDateString = announcement.EndDate.ToString("dd.MM.yy");
+
+            // Встановлення власитвості Активне для відображення на головній сторінці.
+            var now = DateTime.Now;
+            if (announcement.StartDate < now && announcement.EndDate > now)
+                announcement.Active = true;
+            else
+                announcement.Active = false;
 
             TemporaryPhoto? temporaryPhoto = database.TemporaryPhotos.ToList().FirstOrDefault(temporaryPhoto => temporaryPhoto.Path == form["photo"]);
             if (temporaryPhoto is not null) database.TemporaryPhotos.Remove(temporaryPhoto);
