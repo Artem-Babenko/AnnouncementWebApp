@@ -55,7 +55,7 @@ public class CreatePageMiddleware
                 photoLink: form["photo"],
                 name: form["name"],
                 shortDescription: form["short-description"],
-                fullDescription: form["full-descritpion"],
+                fullDescription: form["full-description"],
                 owner: form["owner"],
                 ownerId: user?.Id ?? "null",
                 tag: tags.FindTag(form["tag"]).Name,
@@ -66,6 +66,13 @@ public class CreatePageMiddleware
                 address: form["address"],
                 phone: form["phone"]
             );
+
+            // Встановлення власитвості Активне для відображення на головній сторінці.
+            var now = DateTime.Now;
+            if (announcement.StartDate < now && announcement.EndDate > now)
+                announcement.Active = true;
+            else
+                announcement.Active = false;
 
             // При створення оголошення, його фотографія видаляється зі списку тимчасових файлів
             TemporaryPhoto? temporaryPhoto = database.TemporaryPhotos.ToList().FirstOrDefault(temporaryPhoto => temporaryPhoto.Path == form["photo"]);
