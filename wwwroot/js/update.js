@@ -25,12 +25,12 @@ async function getAnnouncemetAndSetValue() {
         nameInput.value = announcement.name;
         countChars(nameInput, 40, 'max-length-name', announcement.name);
         // Опис
-        const shortDescription = document.querySelector(".short-descritpion textarea");
+        const shortDescription = document.querySelector(".short-description textarea");
         shortDescription.value = announcement.shortDescription;
         countChars(shortDescription, 300, 'max-length-short', announcement.shortDescription);
-        const fullDescritpion = document.querySelector(".full-descritpion textarea");
-        fullDescritpion.value = announcement.fullDescription;
-        countChars(shortDescription, 1500, 'max-length-full', announcement.fullDescription);
+        const fullDescription = document.querySelector(".full-description textarea");
+        fullDescription.value = announcement.fullDescription;
+        countChars(fullDescription, 1500, 'max-length-full', announcement.fullDescription);
         // Контакти
         document.querySelector(".contacts .telegram input").value = announcement.telegram;
         document.querySelector(".contacts .email input").value = announcement.email;
@@ -153,10 +153,14 @@ function dragAndDropEvents() {
     });
 }
 
-setNowDate();
-getTags();
-dragAndDropEvents();
-getAnnouncemetAndSetValue();
 
-document.getElementById('dropcontainer').style.display = "none";
-document.getElementById("double-click").style.display = "flex";
+document.addEventListener("DOMContentLoaded", () => {
+    setNowDate();
+    getTags();
+    dragAndDropEvents();
+    getAnnouncemetAndSetValue();
+
+    document.getElementById('dropcontainer').style.display = "none";
+    document.getElementById("double-click").style.display = "flex";
+
+});
